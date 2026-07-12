@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink-900 font-body antialiased;
+    font-feature-settings: "ss01" on, "cv01" on;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-ink-900;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #25AAE1;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink-900;
+  }
+}
+
+@layer components {
+  .container-brand {
+    @apply mx-auto w-full max-w-[1360px] px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest2 text-ink-500;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-ink-900 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-signature;
+  }
+  .btn-primary::after {
+    content: "";
+    @apply absolute inset-0 -z-10 translate-y-full bg-primary transition-transform duration-300 ease-signature;
+  }
+  .btn-primary:hover::after,
+  .btn-primary:focus-visible::after {
+    @apply translate-y-0;
+  }
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-transparent px-7 py-3.5 text-sm font-semibold text-ink-900 transition-all duration-300 ease-signature hover:border-ink-900 hover:bg-ink-900 hover:text-white active:scale-[0.97];
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition-all duration-300 ease-signature hover:border-white/70 hover:bg-white/10 active:scale-[0.97];
+  }
+
+  .field-label {
+    @apply mb-2 block font-mono text-[11px] uppercase tracking-widest2 text-ink-500;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-ink-300 transition-all duration-200 ease-signature focus:border-primary focus:shadow-glow-primary;
+  }
+
+  .step-divider {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(26, 180, 46, 0.16),
+      rgba(26, 180, 46, 0.16) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+  }
+
+  .seal-ring {
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
