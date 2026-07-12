@@ -64,10 +64,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <Logo variant="light" withTagline />
-            <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/55">
+            <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/90">
               A purpose-driven mobility and logistics enterprise, moving vehicles
               and freight with insured precision, transparent tracking, and
-              absolute peace of mind — from first mile to final delivery.
+              absolute peace of mind from first mile to final delivery.
             </p>
             <div className="mt-8 flex items-center gap-3">
               {SOCIALS.map((s) => (
@@ -77,7 +77,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all duration-300 ease-signature hover:-translate-y-1 hover:border-primary hover:text-primary hover:shadow-glow-primary"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/55 text-white/70 transition-all duration-300 ease-signature hover:-translate-y-1 hover:border-primary hover:text-primary hover:shadow-glow-primary"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d={s.path} />
@@ -90,13 +90,13 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
             {COLUMNS.map((col) => (
               <div key={col.title}>
-                <h3 className="eyebrow text-white/40">{col.title}</h3>
+                <h3 className="eyebrow text-white/55">{col.title}</h3>
                 <ul className="mt-5 flex flex-col gap-3.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-[14.5px] text-white/70 transition-colors duration-200 hover:text-primary"
+                        className="text-[14.5px] text-white/90 transition-colors duration-200 hover:text-primary"
                       >
                         {link.label}
                       </Link>
@@ -110,10 +110,10 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <div className="flex items-center gap-6">
-            <p className="font-mono text-[12px] text-white/35">
-              © {new Date().getFullYear()} Tranzent. All rights reserved.
+            <p className="font-mono text-[12px] text-white/50">
+              © {new Date().getFullYear()} Tranzent Limited. All rights reserved.
             </p>
-            <p className="hidden font-mono text-[12px] uppercase tracking-widest2 text-white/35 sm:block">
+            <p className="hidden font-mono text-[12px] uppercase tracking-widest2 text-white/50 sm:block">
               Beyond Delivery
             </p>
           </div>
