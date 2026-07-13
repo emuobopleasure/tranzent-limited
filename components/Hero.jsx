@@ -5,7 +5,7 @@ import CarCarrierIllustration from "./CarCarrierIllustration";
 
 // Hero background photo. Swap this file at /public/images/hero-car-carrier.jpg
 // for a different shot any time — everything else updates automatically.
-const HERO_IMAGE = "/images/hero-car-carrier.jpg";
+const HERO_IMAGE = "/images/hero-car-carrier2.jpg";
 
 export default function Hero() {
   return (

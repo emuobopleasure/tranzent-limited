@@ -7,9 +7,9 @@ import Philosophy from "@/components/Philosophy";
 import CTASection from "@/components/CTASection";
 
 export const metadata = {
-  title: "Tranzent — Beyond Delivery",
+  title: "Tranzent Limited - Beyond Delivery",
   description:
-    "Insured, transparent, on-time vehicle transportation and logistics — engineered for absolute peace of mind.",
+    "Insured, transparent, on-time vehicle transportation and logistics - engineered for absolute peace of mind.",
 };
 
 export default function HomePage() {
