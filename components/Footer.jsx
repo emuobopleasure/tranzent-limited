@@ -113,9 +113,9 @@ export default function Footer() {
             <p className="font-mono text-[12px] text-white/50">
               © {new Date().getFullYear()} Tranzent Limited. All rights reserved.
             </p>
-            <p className="hidden font-mono text-[12px] uppercase tracking-widest2 text-white/50 sm:block">
+            {/* <p className="hidden font-mono text-[12px] uppercase tracking-widest2 text-white/50 sm:block">
               Beyond Delivery
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

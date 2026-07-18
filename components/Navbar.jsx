@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import PillButton from "./PillButton";
+import Image from "next/image";
 
 const LINKS = [
   { label: "Home", href: "/" },
@@ -43,7 +44,10 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-[60] transition-colors duration-300 ease-signature ${barBg}`}>
       <nav className="container-brand flex h-[76px] items-center justify-between" aria-label="Primary">
         <Link href="/" className="group relative z-10" onClick={() => setOpen(false)}>
-          <Logo variant={logoVariant} />
+          {/* <div clssName='hero-logo w-24 md:w-36'>
+            <Image src='/images/logo/tranzent-main-logo.svg' alt="Tranzent Logo" width={160} height={50} className="ml-[-14px] md:ml-[-12px]" />
+          </div> */}
+            <Logo variant={logoVariant} />
         </Link>
 
         <ul className="hidden items-center gap-9 lg:flex">
@@ -51,9 +55,8 @@ export default function Navbar() {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={`group relative py-2 text-[14.5px] font-medium transition-colors duration-200 ${
-                  scrolled ? "text-ink-700 hover:text-ink-900" : "text-white/80 hover:text-white"
-                }`}
+                className={`group relative py-2 text-[14.5px] font-medium transition-colors duration-200 ${scrolled ? "text-ink-700 hover:text-ink-900" : "text-white/80 hover:text-white"
+                  }`}
               >
                 {link.label}
                 <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 bg-primary transition-all duration-300 ease-signature group-hover:w-full" />
@@ -87,9 +90,8 @@ export default function Navbar() {
       {/* Mobile menu panel — solid light surface, guaranteed readable */}
       <div
         id="mobile-menu"
-        className={`fixed inset-x-0 top-[76px] z-[55] origin-top bg-white transition-all duration-300 ease-signature lg:hidden ${
-          open ? "visible opacity-100 scale-y-100 pointer-events-auto" : "invisible opacity-0 scale-y-95 pointer-events-none"
-        }`}
+        className={`fixed inset-x-0 top-[76px] z-[55] origin-top bg-white transition-all duration-300 ease-signature lg:hidden ${open ? "visible opacity-100 scale-y-100 pointer-events-auto" : "invisible opacity-0 scale-y-95 pointer-events-none"
+          }`}
         style={{ height: "calc(100dvh - 76px)" }}
       >
         <ul className="container-brand flex h-full flex-col gap-1 overflow-y-auto pt-8 pb-10">
