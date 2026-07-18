@@ -44,10 +44,7 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-[60] transition-colors duration-300 ease-signature ${barBg}`}>
       <nav className="container-brand flex h-[76px] items-center justify-between" aria-label="Primary">
         <Link href="/" className="group relative z-10" onClick={() => setOpen(false)}>
-          {/* <div clssName='hero-logo w-24 md:w-36'>
-            <Image src='/images/logo/tranzent-main-logo.svg' alt="Tranzent Logo" width={160} height={50} className="ml-[-14px] md:ml-[-12px]" />
-          </div> */}
-            <Logo variant={logoVariant} />
+          <Logo ring={open || scrolled ? "gray" : "white"} />
         </Link>
 
         <ul className="hidden items-center gap-9 lg:flex">

@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.3fr_2fr]">
           <div>
-            <Logo variant="light" withTagline />
+            <Logo ring="accent" />
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/90">
               A purpose-driven mobility and logistics enterprise, moving vehicles
               and freight with insured precision, transparent tracking, and
