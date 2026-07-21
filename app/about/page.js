@@ -3,11 +3,12 @@ import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import MediaFrame from "@/components/MediaFrame";
 import CarCarrierIllustration from "@/components/CarCarrierIllustration";
+import Philosophy from "@/components/Philosophy";
 
 export const metadata = {
   title: "About",
   description:
-    "Tranzent is a purpose-driven enterprise scaling into logistics, vehicle transportation, mobility, and technology — built on transit and zen.",
+    "Tranzent is a purpose-driven enterprise scaling into logistics, vehicle transportation, mobility, and technology, built on transit and zen.",
 };
 
 const VALUES = [
@@ -54,14 +55,17 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Who We Are"
         title="A logistics company built the way a promise should be kept."
-        copy="Tranzent began with a straightforward frustration: logistics that made people anxious instead of confident. We built the opposite — and we're scaling it across mobility, vehicle transportation, and technology."
+        copy="Tranzent began with a straightforward frustration: logistics that made people anxious instead of confident. We built the opposite and we're scaling it across mobility, vehicle transportation, and technology."
       />
 
+      {/* <section className="bg-paper py-24 sm:py-28"> */}
+      <Philosophy />
+      {/* </section> */}
       <section className="bg-paper py-24 sm:py-28">
         <div className="container-brand grid grid-cols-1 gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <Reveal>
             <span className="eyebrow text-ink-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              <span className="h-[3px] w-6 rounded-full bg-primary" />
               Our Story
             </span>
             <h2 className="mt-5 font-display text-[30px] font-semibold leading-tight tracking-tightest text-ink-900 sm:text-[36px]">
@@ -71,23 +75,23 @@ export default function AboutPage() {
               <p>
                 Tranzent started as a focused vehicle transportation operation,
                 moving cars between cities for dealers who needed a partner
-                they didn&rsquo;t have to babysit. What set us apart wasn&rsquo;t
-                speed alone — it was the discipline behind it: documented
+                they didn't have to babysit. What set us apart wasn't
+                speed alone. It was the discipline behind it: documented
                 handoffs, insured coverage as standard, and a team that
                 treated every vehicle like it belonged to someone who cared.
               </p>
               <p>
                 That discipline is now the foundation of a larger enterprise.
                 Tranzent is scaling deliberately into fleet logistics,
-                mobility consulting, and the technology that supports both —
-                always guided by the same fusion the name describes:{" "}
+                mobility consulting, and the technology that supports both.
+                Always guided by the same fusion the name describes:{" "}
                 <span className="font-medium text-ink-700">transit</span>,
                 the movement, and{" "}
                 <span className="font-medium text-ink-700">zen</span>, the
-                peace of mind that movement shouldn&rsquo;t cost you.
+                peace of mind that movement shouldn't cost you.
               </p>
               <p>
-                We&rsquo;re not chasing volume for its own sake. Every new
+                We're not chasing volume for its own sake. Every new
                 lane, every new service line, is added only once we can
                 deliver it to the same standard as the first vehicle we ever
                 moved.
@@ -97,10 +101,10 @@ export default function AboutPage() {
 
           <Reveal delay={120}>
             <div className="rounded-3xl border border-line bg-white p-8 shadow-card sm:p-9">
-              <p className="font-mono text-[11px] uppercase tracking-widest2 text-ink-300">
+              {/* <p className="font-mono text-[11px] uppercase tracking-widest2 text-ink-300">
                 What you can count on
-              </p>
-              <ul className="mt-6 flex flex-col gap-5">
+              </p> */}
+              <ul className="flex flex-col gap-5">
                 {COMMITMENTS.map((item) => (
                   <li key={item.label} className="flex items-center gap-4">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
@@ -117,7 +121,7 @@ export default function AboutPage() {
               <p className="font-display text-lg font-medium leading-snug text-white">
                 &ldquo;Driven by care. Remembered for the experience.&rdquo;
               </p>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-widest2 text-white/40">
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-widest2 text-white/60">
                 Tranzent, since day one
               </p>
             </div>
@@ -129,9 +133,9 @@ export default function AboutPage() {
         <div className="container-brand">
           <Reveal>
             <MediaFrame
-              src="/images/about/story.jpg"
+              src="/images/about/haulage-service.jpg"
               alt="A Tranzent-coordinated car carrier loaded and ready for the road"
-              className="h-[280px] rounded-[28px] shadow-card sm:h-[380px]"
+              className="h-[280px] rounded-[28px] shadow-card sm:h-[380px] md:h-auto"
               overlay="bottom"
               fallback={<CarCarrierIllustration className="h-full w-full" />}
             >
@@ -140,7 +144,7 @@ export default function AboutPage() {
                   On the Road
                 </span>
                 <p className="mt-3 max-w-sm font-display text-lg font-semibold text-white sm:text-xl">
-                  Every load documented, strapped, and monitored the same way — every time.
+                  Every load documented, strapped, and monitored the same way, every time.
                 </p>
               </div>
             </MediaFrame>
@@ -152,7 +156,7 @@ export default function AboutPage() {
         <div className="container-brand">
           <Reveal>
             <span className="eyebrow text-secondary-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+              <span className="h-[3px] w-6 rounded-full bg-secondary" />
               What We Stand On
             </span>
             <h2 className="mt-5 max-w-xl font-display text-[30px] font-semibold leading-tight tracking-tightest text-white sm:text-[38px]">

@@ -37,7 +37,7 @@ export default function Hero() {
 
           <p className="mt-6 max-w-md text-[16px] leading-relaxed text-white/85 drop-shadow-[0_1px_10px_rgba(11,20,36,0.5)] sm:text-[17px]">
             Tranzent moves vehicles, fleets, and freight across Nigerian
-            roads with insured precision and live visibility — so every
+            roads with insured precision and live visibility, so every
             handover feels less like a shipment, and more like a promise
             kept.
           </p>

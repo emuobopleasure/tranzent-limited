@@ -5,7 +5,7 @@ import PillButton from "./PillButton";
 export default function CTASection({
   eyebrow = "Ready when you are",
   title = "Let's move something with care.",
-  copy = "Tell us what needs to move — a single vehicle, a fleet, or a freight lane — and we'll respond with a routed quote within one business day.",
+  copy = "Tell us what needs to move. A single vehicle, a fleet, or a freight lane. We'll respond with a routed quote within one business day.",
 }) {
   return (
     <section className="bg-paper py-24 sm:py-28">

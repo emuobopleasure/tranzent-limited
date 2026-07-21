@@ -104,7 +104,7 @@ export default function Footer() {
               ))}
             </div>
             <div className="mt-8 flex items-start gap-3">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0 text-primary-300" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-1 shrink-0 text-primary-300" aria-hidden="true">
                 <path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Zm0-9a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" stroke="currentColor" strokeWidth="1.6" />
               </svg>
               <div>

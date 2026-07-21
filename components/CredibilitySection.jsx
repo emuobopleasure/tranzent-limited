@@ -18,10 +18,7 @@ export default function CredibilitySection() {
             Track every mile, in real time.
           </h2>
           <p className="mt-5 max-w-md text-[15.5px] leading-relaxed text-white/60">
-            Every shipment on Tranzent runs through the same dashboard our
-            coordinators use — checkpoint updates, live routing, and a
-            transparent status trail from pickup to handover. No app to
-            install, no guessing where things stand.
+            Every shipment on Tranzent runs through the same dashboard our coordinators use. Checkpoint updates, live routing, and a transparent status trail from pickup to handover. No app to install. No guessing where things stand.
           </p>
 
           <ul className="mt-8 flex flex-col gap-4">

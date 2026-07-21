@@ -4,7 +4,7 @@ const CARDS = [
   {
     title: "Fully Insured Assets",
     copy:
-      "Every vehicle and shipment is covered end-to-end, with transparent policy documentation shared before pickup — not after something goes wrong.",
+      "Every vehicle and shipment is covered end-to-end, with transparent policy documentation shared before pickup, not after something goes wrong.",
     tag: "Coverage",
     span: "lg:col-span-3 lg:row-span-2",
     accent: "primary",
@@ -37,7 +37,7 @@ const CARDS = [
   {
     title: "Vetted Handling Crews",
     copy:
-      "Trained, background-checked operators at every checkpoint — because peace of mind starts with who's behind the wheel.",
+      "Trained, background-checked operators at every checkpoint, because peace of mind starts with who's behind the wheel.",
     tag: "Integrity",
     span: "lg:col-span-3",
     accent: "primary",
@@ -79,17 +79,17 @@ export default function TrustMatrix() {
                   className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white p-8 shadow-card transition-all duration-400 ease-signature hover:-translate-y-1.5 hover:shadow-lift w-full ${palette.ring}`}
                 >
                   <div>
-                    <div className="flex items-center justify-between">
-                      {/* <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${palette.bg} ${palette.text} transition-transform duration-400 ease-signature group-hover:scale-110 group-hover:-rotate-6`}>
+                    {/* <div className="flex items-center justify-between">
+                      <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${palette.bg} ${palette.text} transition-transform duration-400 ease-signature group-hover:scale-110 group-hover:-rotate-6`}>
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                           {card.icon}
                         </svg>
-                      </span> */}
+                      </span>
                       <span className="font-mono text-[10.5px] uppercase tracking-widest2 text-ink-300">
                         {card.tag}
                       </span>
-                    </div>
-                    <h3 className="mt-6 font-display text-xl font-semibold text-ink-900">
+                    </div> */}
+                    <h3 className="mb-6 font-display text-xl font-semibold text-ink-900">
                       {card.title}
                     </h3>
                     <p className="mt-3 text-[15px] leading-relaxed text-ink-500">
