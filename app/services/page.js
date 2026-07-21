@@ -7,7 +7,7 @@ import { SERVICES } from "@/lib/services";
 export const metadata = {
   title: "Services",
   description:
-    "Explore Tranzent's core services — vehicle transportation, enclosed high-value haul, fleet & dealer logistics, and mobility consulting.",
+    "Explore Tranzent's core services - vehicle transportation, enclosed high-value haul, fleet & dealer logistics, and mobility consulting.",
 };
 
 const ACCENTS = {
@@ -51,8 +51,8 @@ export default function ServicesPage() {
                       {service.icon}
                     </svg>
                   </div> */}
-                  <div className="flex items-center gap-x-4">
-                    <span className="eyebrow text-primary-300">
+                  <div className="flex items-start gap-x-4">
+                    <span className="eyebrow text-primary-300 pt-[1.1rem] lg:pt-5">
                       <span className="h-[3px] w-6 rounded-full bg-accent" />
                       
                     </span>
@@ -91,9 +91,9 @@ export default function ServicesPage() {
                       }
                     >
                       <div className="absolute bottom-0 left-0 p-7 sm:p-8">
-                        <p className="font-mono text-[11px] uppercase tracking-widest2 text-white/60">
+                        {/* <p className="font-mono text-[11px] uppercase tracking-widest2 text-white/60">
                           Service {service.code}
-                        </p>
+                        </p> */}
                         <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
                           {service.short}
                         </p>
@@ -109,9 +109,9 @@ export default function ServicesPage() {
                           </svg>
                         </div>
                         <div>
-                          <p className="font-mono text-[11px] uppercase tracking-widest2 text-ink-300">
+                          {/* <p className="font-mono text-[11px] uppercase tracking-widest2 text-ink-300">
                             Service {service.code}
-                          </p>
+                          </p> */}
                           <p className="mt-2 font-display text-xl font-semibold text-ink-900">
                             {service.short}
                           </p>

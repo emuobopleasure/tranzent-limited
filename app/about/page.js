@@ -133,7 +133,7 @@ export default function AboutPage() {
         <div className="container-brand">
           <Reveal>
             <MediaFrame
-              src="/images/about/haulage-service.jpg"
+              src="/images/about/haulage-service.png"
               alt="A Tranzent-coordinated car carrier loaded and ready for the road"
               className="h-[280px] rounded-[28px] shadow-card sm:h-[380px] md:h-auto"
               overlay="bottom"
