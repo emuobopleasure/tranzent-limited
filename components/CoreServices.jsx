@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 import { SERVICES } from "@/lib/services";
+import MediaFrame from "./MediaFrame";
+import CarCarrierIllustration from "./CarCarrierIllustration";
 
 const ACCENTS = {
   primary: "bg-primary-50 text-primary-600",
@@ -11,6 +13,9 @@ const ACCENTS = {
 export default function CoreServices() {
   return (
     <section className="bg-ink-900 py-24 sm:py-28">
+      {/* <div className="absolute inset-0 z-0">
+        <MediaFrame className="h-full w-full" fallback={<CarCarrierIllustration className="h-full w-full animate-hero-zoom opacity-20"/>} />
+      </div> */}
       <div className="core-services-section container-brand">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end lg:items-start">
           <Reveal>
@@ -62,6 +67,7 @@ export default function CoreServices() {
             </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );

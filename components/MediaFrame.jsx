@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function MediaFrame({
   src,
@@ -10,6 +11,7 @@ export default function MediaFrame({
   overlay = "none", // "none" | "bottom" | "left" | "full"
   fallback,
   priority = false,
+  sizes = "100vw",
   children,
 }) {
   const [errored, setErrored] = useState(false);
@@ -19,10 +21,10 @@ export default function MediaFrame({
     overlay === "bottom"
       ? "bg-gradient-to-t from-ink-900/80 via-ink-900/15 to-transparent"
       : overlay === "left"
-      ? "bg-gradient-to-r from-ink-900/85 via-ink-900/30 to-transparent"
-      : overlay === "full"
-      ? "bg-ink-900/45"
-      : "";
+        ? "bg-gradient-to-r from-ink-900/85 via-ink-900/30 to-transparent"
+        : overlay === "full"
+          ? "bg-ink-900/45"
+          : "";
 
   return (
     <div className={`relative isolate overflow-hidden ${className}`}>
@@ -39,13 +41,14 @@ export default function MediaFrame({
           {fallback}
         </div>
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={src}
           alt={alt}
-          loading={priority ? "eager" : "lazy"}
+          fill
+          sizes={sizes}
+          priority={priority}
           onError={() => setErrored(true)}
-          className={`h-full w-full object-cover ${imgClassName}`}
+          className={`object-cover ${imgClassName}`}
         />
       )}
       {!showFallback && overlay !== "none" && (

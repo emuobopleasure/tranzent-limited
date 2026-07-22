@@ -86,7 +86,7 @@ export default function Philosophy() {
             <MediaFrame
               src="/images/truck-carrier.png"
               alt="A Tranzent car carrier on the road"
-              className="md:h-auto h-[280px] rounded-[28px] shadow-card sm:h-[380px]"
+              className="h-[280px] rounded-[28px] shadow-card sm:h-[380px] md:h-[520px] lg:h-[620px]"
               overlay="bottom"
               fallback={
                 <svg

@@ -13,12 +13,38 @@ export default function CTASection({
         <Reveal>
           <div className="relative overflow-hidden rounded-[32px] bg-ink-900 px-8 py-16 sm:px-16 sm:py-20">
             <svg
-              className="pointer-events-none absolute -left-10 -bottom-10 h-56 w-56 text-primary/10"
-              viewBox="0 0 100 100"
+              className="pointer-events-none absolute -left-10 -bottom-10 h-56 w-56 text-primary/30"
+              viewBox="0 0 500 500"
               fill="none"
               aria-hidden="true"
             >
-              <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="10" strokeDasharray="6 8" />
+              {/* Lower-Left Arrow */}
+              <path
+                d="M 125 210
+       H 270
+       A 20 20 0 0 1 290 230
+       V 435
+       A 40 40 0 0 1 210 435
+       V 330
+       A 20 20 0 0 0 190 310
+       H 125
+       A 40 40 0 0 1 125 210 Z"
+                fill="currentColor"
+              />
+
+              {/* Upper-Right Arrow */}
+              <path
+                d="M 245 90
+       H 390
+       A 20 20 0 0 1 410 110
+       V 315
+       A 40 40 0 0 1 330 315
+       V 210
+       A 20 20 0 0 0 310 190
+       H 245
+       A 40 40 0 0 1 245 90 Z"
+                fill="currentColor"
+              />
             </svg>
             <div className="relative mx-auto max-w-2xl text-center">
               <span className="eyebrow justify-center text-secondary-300">

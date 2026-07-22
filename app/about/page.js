@@ -135,7 +135,7 @@ export default function AboutPage() {
             <MediaFrame
               src="/images/about/haulage-service.png"
               alt="A Tranzent-coordinated car carrier loaded and ready for the road"
-              className="h-[280px] rounded-[28px] shadow-card sm:h-[380px] md:h-auto"
+              className="h-[280px] rounded-[28px] shadow-card sm:h-[380px] md:h-[520px] lg:h-[620px]"
               overlay="bottom"
               fallback={<CarCarrierIllustration className="h-full w-full" />}
             >
@@ -192,23 +192,52 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 items-center gap-12 rounded-[32px] border border-line bg-white p-10 shadow-card sm:p-14 lg:grid-cols-[1fr_auto]">
               <div>
                 <span className="eyebrow text-ink-500">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                  <span className="h-[3px] w-6 rounded-full bg-accent" />
                   Where We're Headed
                 </span>
                 <h2 className="mt-5 max-w-lg font-display text-[26px] font-semibold leading-tight tracking-tightest text-ink-900 sm:text-[30px]">
-                  Beyond delivery — into mobility and logistics technology.
+                  Beyond delivery, into mobility and logistics technology.
                 </h2>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-500">
-                  Vehicle transportation is our foundation, not our ceiling.
-                  We're building toward a full mobility and logistics
-                  ecosystem — fleet software, route intelligence, and
-                  consulting — engineered by the same team that still answers
-                  the phone when a car is on the road.
+                  Vehicle transportation is our foundation, not our ceiling. We're building toward a full mobility and logistics ecosystem that includes fleet software, route intelligence, and consulting. All engineered by the same team that still answers the phone when a car is on the road.
                 </p>
               </div>
               <div className="flex shrink-0 items-center justify-center">
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true" className="text-secondary">
-                  <path d="M20 100h20v-20h20v-20h20v-20h20" stroke="currentColor" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="120"
+                  height="120"
+                  viewBox="0 0 500 500"
+                  fill="none"
+                  aria-hidden="true"
+                  className="text-secondary"
+                >
+                  {/* Lower-Left Arrow */}
+                  <path
+                    d="M 125 210
+       H 270
+       A 20 20 0 0 1 290 230
+       V 435
+       A 40 40 0 0 1 210 435
+       V 330
+       A 20 20 0 0 0 190 310
+       H 125
+       A 40 40 0 0 1 125 210 Z"
+                    fill="currentColor"
+                  />
+
+                  {/* Upper-Right Arrow */}
+                  <path
+                    d="M 245 90
+       H 390
+       A 20 20 0 0 1 410 110
+       V 315
+       A 40 40 0 0 1 330 315
+       V 210
+       A 20 20 0 0 0 310 190
+       H 245
+       A 40 40 0 0 1 245 90 Z"
+                    fill="currentColor"
+                  />
                 </svg>
               </div>
             </div>
