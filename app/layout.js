@@ -49,6 +49,10 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#0B1424",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
