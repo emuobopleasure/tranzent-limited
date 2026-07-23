@@ -191,11 +191,11 @@ export default function AboutPage() {
           <Reveal>
             <div className="grid grid-cols-1 items-center gap-12 rounded-[32px] border border-line bg-white p-10 shadow-card sm:p-14 lg:grid-cols-[1fr_auto]">
               <div>
-                <span className="eyebrow text-ink-500">
+                {/* <span className="eyebrow text-ink-500">
                   <span className="h-[3px] w-6 rounded-full bg-accent" />
                   Where We're Headed
-                </span>
-                <h2 className="mt-5 max-w-lg font-display text-[26px] font-semibold leading-tight tracking-tightest text-ink-900 sm:text-[30px]">
+                </span> */}
+                <h2 className="max-w-lg font-display text-[26px] font-semibold leading-tight tracking-tightest text-ink-900 sm:text-[30px]">
                   Beyond delivery, into mobility and logistics technology.
                 </h2>
                 <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-500">
