@@ -30,7 +30,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="What We Move"
         title="Specialised transport, matched to what you're moving."
-        copy="Whether it's a single vehicle, a high-value collector's piece, or an entire dealer fleet, Tranzent routes it through the handling standard it deserves."
+        copy="From a single vehicle to a high-value collector's piece or an entire dealer fleet, Tranzent routes it through the handling standard it deserves"
       />
 
       <section className="bg-paper py-24 sm:py-28">
@@ -54,7 +54,7 @@ export default function ServicesPage() {
                   <div className="flex items-start gap-x-4">
                     <span className="eyebrow text-primary-300 pt-[1.1rem] lg:pt-5">
                       <span className="h-[3px] w-6 rounded-full bg-accent" />
-                      
+
                     </span>
                     <h2 className="font-display text-[28px] font-semibold leading-tight tracking-tightest text-ink-900 sm:text-[34px]">
                       {service.title}
@@ -63,16 +63,36 @@ export default function ServicesPage() {
                   <p className="mt-5 max-w-lg text-[16px] leading-relaxed text-ink-500">
                     {service.copy}
                   </p>
-                  <ul className="mt-7 flex flex-col gap-3.5">
-                    {service.points.map((point) => (
-                      <li key={point} className="flex items-start gap-3 text-[14.5px] text-ink-700">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0 text-secondary-600" aria-hidden="true">
-                          <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+                  {service.points.length > 0 && (
+                    <ul className="mt-7 flex flex-col gap-3.5">
+                      {service.points.map((point) => (
+                        <li key={point} className="flex items-start gap-3 text-[14.5px] text-ink-700">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0 text-secondary-600" aria-hidden="true">
+                            <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {service.subServices && (
+                    <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                      {service.subServices.map((sub) => (
+                        <div
+                          key={sub.title}
+                          className="rounded-2xl border border-line bg-white p-5 transition-colors duration-300 ease-signature hover:border-primary-200"
+                        >
+                          <h3 className="font-display text-[15px] font-semibold text-ink-900">
+                            {sub.title}
+                          </h3>
+                          <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-500">
+                            {sub.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </Reveal>
 
                 <Reveal delay={120} className={reversed ? "lg:order-1" : ""}>
@@ -80,7 +100,7 @@ export default function ServicesPage() {
                     <MediaFrame
                       src={service.image}
                       alt={service.title}
-                      className="h-[320px] rounded-[28px] shadow-card sm:h-[380px]"
+                      className="h-[320px] rounded-[28px] shadow-card sm:h-[380px] lg:h-[580px] xl:h-[520px]"
                       overlay="bottom"
                       fallback={
                         <span className={`flex h-16 w-16 items-center justify-center rounded-2xl border ${palette}`}>
