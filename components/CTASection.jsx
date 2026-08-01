@@ -3,9 +3,9 @@ import Reveal from "./Reveal";
 import PillButton from "./PillButton";
 
 export default function CTASection({
-  eyebrow = "Ready when you are",
-  title = "Let's move something with care.",
-  copy = "Tell us what needs to move. A single vehicle, a fleet, or a freight lane. We'll respond with a routed quote within one business day.",
+  eyebrow = "Ready to get moving?",
+  title = "Let's make your next shipment simple.",
+  copy = "Tell us what you need to move, and we'll take care of the rest. Expect a tailored route quote within one business day.",
 }) {
   return (
     <section className="bg-paper py-24 sm:py-28">
@@ -58,7 +58,7 @@ export default function CTASection({
                 {copy}
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <PillButton href="/contact" variant="primary">
+                <PillButton href="/quote" variant="primary">
                   Request a Quote
                 </PillButton>
                 <Link href="/services" className="btn-ghost-light hover:text-ink-900 hover:bg-primary-50 py-3">

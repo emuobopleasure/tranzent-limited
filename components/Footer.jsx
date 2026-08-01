@@ -51,7 +51,8 @@ const COLUMNS = [
   {
     title: "Get in Touch",
     links: [
-      { label: "Request a Quote", href: "/contact" },
+      { label: "Request a Quote", href: "/quote" },
+      { label: "Contact Us", href: "/contact" },
       { label: "tranzent.limited@gmail.com", href: "mailto:tranzent.limited@gmail.com" },
       // { label: "+234 812 959 8167", href: "tel:+2348000000000" },
       // { label: "+234 800 000 0000", href: "tel:+2348000000000" },
@@ -108,7 +109,7 @@ export default function Footer() {
                 <path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Zm0-9a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" stroke="currentColor" strokeWidth="1.6" />
               </svg>
               <div>
-                <span className="block max-w-[15rem] text-[14px] leading-relaxed text-white/70">
+                <span className="block max-w-[15rem] text-[14px] leading-relaxed text-white/90">
                   Plot 809, A-Close, 64 Crescent, Gwarinpa, Abuja, Nigeria
                 </span>
               </div>
@@ -161,7 +162,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <div className="flex items-center gap-6">
-            <p className="font-mono text-[12px] text-white/50">
+            <p className="font-mono text-[12px] text-white/70">
               © {new Date().getFullYear()} Tranzent Limited. All rights reserved.
             </p>
             {/* <p className="hidden font-mono text-[12px] uppercase tracking-widest2 text-white/50 sm:block">

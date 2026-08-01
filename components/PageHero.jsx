@@ -18,7 +18,7 @@ export default function PageHero({ eyebrow, title, copy }) {
           {title}
         </h1>
         {copy && (
-          <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-white/60 sm:text-lg">
+          <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-white/70 sm:text-lg">
             {copy}
           </p>
         )}
