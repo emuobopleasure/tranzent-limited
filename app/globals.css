@@ -68,7 +68,7 @@
   }
 
   .field-input {
-    @apply w-full rounded-xl border border-line bg-white px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-ink-300 transition-all duration-200 ease-signature focus:border-primary focus:shadow-glow-primary;
+    @apply w-full rounded-xl border border-ink-300 bg-white px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-ink-300 transition-all duration-200 ease-signature focus:border-primary focus:shadow-glow-primary;
   }
 
   .step-divider {

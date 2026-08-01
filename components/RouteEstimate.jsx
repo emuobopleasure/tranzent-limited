@@ -48,13 +48,13 @@ export default function RouteEstimate({ origin, destination, distanceKm, duratio
                     <p className="truncate font-display text-[13px] font-semibold text-ink-900 sm:text-sm" title={origin || ""}>
                         {origin || "—"}
                     </p>
-                    <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest2 text-ink-300">From</p>
+                    <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest2 text-ink-400">From</p>
                 </div>
                 <div className="px-3 py-4 text-center">
                     <p className="font-display text-[15px] font-semibold text-ink-900 sm:text-lg">
                         {ready ? `${distanceKm} km` : "—"}
                     </p>
-                    <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest2 text-ink-300">
+                    <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest2 text-ink-400">
                         {isLive ? "Road Distance" : "Est. Distance"}
                     </p>
                 </div>
@@ -62,7 +62,7 @@ export default function RouteEstimate({ origin, destination, distanceKm, duratio
                     <p className="truncate font-display text-[13px] font-semibold text-ink-900 sm:text-sm" title={destination || ""}>
                         {destination || "—"}
                     </p>
-                    <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest2 text-ink-300">To</p>
+                    <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest2 text-ink-400">To</p>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@ export default function RouteEstimate({ origin, destination, distanceKm, duratio
 
                     {factors.length > 0 && (
                         <div className="border-t border-line p-4 sm:p-5">
-                            <p className="font-mono text-[10px] uppercase tracking-widest2 text-ink-300">
+                            <p className="font-mono text-[10px] uppercase tracking-widest2 text-ink-500">
                                 Factors that may affect this ETA
                             </p>
                             <ul className="mt-3 flex flex-col gap-3">

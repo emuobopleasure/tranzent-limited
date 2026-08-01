@@ -541,7 +541,7 @@ export default function ContactForm() {
             className="field-input resize-none"
             placeholder={
               isDeliveryService
-                ? "Anything else we should know — access restrictions, timing constraints, special handling requirements."
+                ? "Share any details that will help us plan your shipment, such as access restrictions, timing preferences, or special handling instructions."
                 : "Tell us what you need, and we'll get back to you with the details."
             }
           />
@@ -551,8 +551,8 @@ export default function ContactForm() {
           {status === "submitting"
             ? "Sending…"
             : isDeliveryService
-            ? "Request Quote"
-            : "Submit Enquiry"}
+              ? "Request Quote"
+              : "Submit Enquiry"}
           {status !== "submitting" && (
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M2 12 12 2M12 2H4M12 2v8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
