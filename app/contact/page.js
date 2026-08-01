@@ -1,8 +1,10 @@
 import PageHero from "@/components/PageHero";
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
 import MediaFrame from "@/components/MediaFrame";
 import CarCarrierIllustration from "@/components/CarCarrierIllustration";
+import EnquiryForm from "@/components/EnquiryForm";
+import QuoteIllustration from "@/components/QuoteIllustration";
 
 export const metadata = {
   title: "Contact",
@@ -28,13 +30,13 @@ const INFO = [
     ),
   },
   {
-  label: "WhatsApp",
-  value: "+234 8107168919",
-  href: "https://wa.me/2348107168919?text=Hi%20Tranzent%2C%20I%27d%20like%20to%20enquire%20about%20a%20delivery.",
-  icon: (
-    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.36-1.4c1.38.75 2.96 1.18 4.66 1.18h.02c5.46 0 9.91-4.45 9.91-9.91 0-2.64-1.03-5.13-2.91-7C17.14 3.03 14.65 2 12.04 2Zm.01 1.67c2.21 0 4.28.86 5.84 2.42a8.19 8.19 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.27 8.25a8.27 8.27 0 0 1-4.19-1.14l-.3-.18-3.18.83.85-3.1-.2-.32a8.2 8.2 0 0 1-1.27-4.38c0-4.56 3.71-8.21 8.3-8.21Zm-3.72 4.6c-.15 0-.4.06-.61.29-.21.24-.8.78-.8 1.9s.82 2.21.94 2.36c.11.15 1.59 2.52 3.9 3.44 1.92.76 2.31.6 2.73.57.42-.04 1.34-.55 1.53-1.08.19-.53.19-.98.13-1.08-.06-.1-.21-.15-.44-.27-.23-.11-1.34-.66-1.55-.74-.21-.08-.36-.11-.51.12-.15.23-.58.74-.71.89-.13.15-.26.17-.49.06-.23-.11-.96-.36-1.83-1.14-.68-.6-1.13-1.35-1.27-1.58-.13-.23-.01-.35.1-.47.11-.11.23-.27.35-.4.11-.13.15-.23.23-.38.08-.15.04-.29-.02-.4-.06-.11-.51-1.26-.72-1.72-.19-.44-.38-.38-.51-.39-.13-.01-.28-.01-.43-.01Z" />
-  ),
-},
+    label: "WhatsApp",
+    value: "+234 8107168919",
+    href: "https://wa.me/2348107168919?text=Hi%20Tranzent%2C%20I%27d%20like%20to%20enquire%20about%20a%20delivery.",
+    icon: (
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.36-1.4c1.38.75 2.96 1.18 4.66 1.18h.02c5.46 0 9.91-4.45 9.91-9.91 0-2.64-1.03-5.13-2.91-7C17.14 3.03 14.65 2 12.04 2Zm.01 1.67c2.21 0 4.28.86 5.84 2.42a8.19 8.19 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.27 8.25a8.27 8.27 0 0 1-4.19-1.14l-.3-.18-3.18.83.85-3.1-.2-.32a8.2 8.2 0 0 1-1.27-4.38c0-4.56 3.71-8.21 8.3-8.21Zm-3.72 4.6c-.15 0-.4.06-.61.29-.21.24-.8.78-.8 1.9s.82 2.21.94 2.36c.11.15 1.59 2.52 3.9 3.44 1.92.76 2.31.6 2.73.57.42-.04 1.34-.55 1.53-1.08.19-.53.19-.98.13-1.08-.06-.1-.21-.15-.44-.27-.23-.11-1.34-.66-1.55-.74-.21-.08-.36-.11-.51.12-.15.23-.58.74-.71.89-.13.15-.26.17-.49.06-.23-.11-.96-.36-1.83-1.14-.68-.6-1.13-1.35-1.27-1.58-.13-.23-.01-.35.1-.47.11-.11.23-.27.35-.4.11-.13.15-.23.23-.38.08-.15.04-.29-.02-.4-.06-.11-.51-1.26-.72-1.72-.19-.44-.38-.38-.51-.39-.13-.01-.28-.01-.43-.01Z" />
+    ),
+  },
   {
     label: "Headquarters",
     value: "Abuja, Nigeria - Plot 809, A-Close, 64 Crescent, Gwarinpa, Abuja.",
@@ -57,20 +59,40 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Request a Quote"
-        title="Tell us what needs to move."
-        copy="Share a few details and we'll respond with a routed quote within one business day, no call required to get started."
+        eyebrow="Get in Touch"
+        title="We're just a message away."
+        copy="Have a question or need more information? Reach out to our team or fill out the form below. We'll be in touch within one business day."
       />
 
-      <section className="bg-paper py-24 sm:py-28">
-        <div className="container-brand grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+      <section className="bg-paper">
+        <section className="relative isolate flex h-[320px] items-end overflow-hidden sm:h-[420px] lg:h-[480px]">
+          <div className="absolute inset-0">
+            <MediaFrame
+              src="/images/contact/contact2.jpg"
+              alt="Requesting a vehicle transport quote"
+              className="h-full w-full bg-opacity-100"
+              imgClassName="object-center animate-hero-zoom"
+              overlay="none"
+              fallback={<QuoteIllustration className="h-full w-full animate-hero-zoom" />}
+            />
+          </div>
+
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/70 via-ink-900/10 to-ink-900/5" />
+
+          {/* <div className="container-brand relative pb-10 sm:pb-12">
+            <p className="mt-3 max-w-md font-display text-xl font-semibold text-white drop-shadow-[0_2px_12px_rgba(11,20,36,0.5)] sm:text-2xl">
+              Share a few details today. We'll send you a routed quote within one business day.
+            </p>
+          </div> */}
+        </section>
+        <div className="container-brand mt-24 grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 pb-24 sm:pb-28">
           <Reveal>
             <div className="flex h-full flex-col overflow-hidden rounded-3xl bg-charcoal">
               <MediaFrame
-                src="/images/contact/contact2.jpg"
+                src="/images/contact/tranzent-contact-staff.jpg"
                 alt="Tranzent car carrier truck loaded with vehicles"
-                className="h-48 w-full sm:h-56 opacity-60"
-                imgClassName="object-[center_55%]"
+                className="h-48 w-full sm:h-64 opacity-70"
+                imgClassName="object-[center_30%]"
                 overlay="none"
                 fallback={<CarCarrierIllustration className="h-full w-full" />}
               />
@@ -81,9 +103,7 @@ export default function ContactPage() {
                     Prefer to speak with someone directly?
                   </h2>
                   <p className="mt-4 text-[14.5px] leading-relaxed text-white/55">
-                    Our team is reachable across every channel below. <br/>For
-                    urgent pickups, mention it in your message and we'll
-                    prioritise your inquiry.
+                    We're available across the contact options below. If your shipment is urgent, let us know in your message and we'll prioritize your request.
                   </p>
                 </div>
 
@@ -119,7 +139,9 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={120}>
-            <ContactForm />
+            <div className="flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-card">
+              <EnquiryForm />
+            </div>
           </Reveal>
         </div>
       </section>

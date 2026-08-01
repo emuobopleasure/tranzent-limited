@@ -3,6 +3,7 @@ import CTASection from "@/components/CTASection";
 import Reveal from "@/components/Reveal";
 import MediaFrame from "@/components/MediaFrame";
 import { SERVICES } from "@/lib/services";
+import CarCarrierIllustration from "@/components/CarCarrierIllustration";
 
 export const metadata = {
   title: "Services",
@@ -17,7 +18,7 @@ const ACCENTS = {
 };
 
 const PROCESS = [
-  { step: "Inquiry", copy: "Share what needs to move — vehicle, fleet, or freight — and your preferred timeline." },
+  { step: "Inquiry", copy: "Let us know what needs to be moved, along with your preferred pickup or delivery schedule." },
   { step: "Routed Quote", copy: "We assess distance, handling requirements, and insurance needs, then respond within one business day." },
   { step: "Scheduled Pickup", copy: "A vetted crew arrives at the agreed window with a documented condition report." },
   { step: "Tracked Transit", copy: "Live checkpoint updates keep you informed from origin to destination." },
@@ -28,7 +29,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="What We Move"
+        eyebrow="Our Transport Solutions"
         title="Specialised transport, matched to what you're moving."
         copy="From a single vehicle to a high-value collector's piece or an entire dealer fleet, Tranzent routes it through the handling standard it deserves"
       />
@@ -42,19 +43,16 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="scroll-mt-28 grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16"
+                className={
+                  service.subServices
+                    ? "scroll-mt-28"
+                    : "scroll-mt-28 grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16"
+                }
               >
-                <Reveal className={reversed ? "lg:order-2" : ""}>
-                  {/* <span className="font-mono text-[12px] text-ink-300">{service.code}</span>
-                  <div className={`mt-4 flex h-14 w-14 items-center justify-center rounded-2xl border ${palette}`}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      {service.icon}
-                    </svg>
-                  </div> */}
+                <Reveal className={!service.subServices && reversed ? "lg:order-2" : ""}>
                   <div className="flex items-start gap-x-4">
                     <span className="eyebrow text-primary-300 pt-[1.1rem] lg:pt-5">
                       <span className="h-[3px] w-6 rounded-full bg-accent" />
-
                     </span>
                     <h2 className="font-display text-[28px] font-semibold leading-tight tracking-tightest text-ink-900 sm:text-[34px]">
                       {service.title}
@@ -75,71 +73,76 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   )}
-
-                  {service.subServices && (
-                    <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                      {service.subServices.map((sub) => (
-                        <div
-                          key={sub.title}
-                          className="rounded-2xl border border-line bg-white p-5 transition-colors duration-300 ease-signature hover:border-primary-200"
-                        >
-                          <h3 className="font-display text-[15px] font-semibold text-ink-900">
-                            {sub.title}
-                          </h3>
-                          <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-500">
-                            {sub.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </Reveal>
 
-                <Reveal delay={120} className={reversed ? "lg:order-1" : ""}>
-                  {service.image ? (
-                    <MediaFrame
-                      src={service.image}
-                      alt={service.title}
-                      className="h-[320px] rounded-[28px] shadow-card sm:h-[380px] lg:h-[580px] xl:h-[520px]"
-                      overlay="bottom"
-                      fallback={
-                        <span className={`flex h-16 w-16 items-center justify-center rounded-2xl border ${palette}`}>
-                          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            {service.icon}
-                          </svg>
-                        </span>
-                      }
-                    >
-                      <div className="absolute bottom-0 left-0 p-7 sm:p-8">
-                        {/* <p className="font-mono text-[11px] uppercase tracking-widest2 text-white/60">
-                          Service {service.code}
-                        </p> */}
-                        <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
-                          {service.short}
-                        </p>
-                      </div>
-                    </MediaFrame>
-                  ) : (
-                    <div className="relative overflow-hidden rounded-[28px] border border-line bg-white p-10 shadow-card sm:p-12">
-                      <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full ${palette.split(" ")[0]} opacity-60`} />
-                      <div className="relative flex h-full flex-col justify-between gap-10">
-                        <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${palette}`}>
-                          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            {service.icon}
-                          </svg>
-                        </div>
-                        <div>
-                          {/* <p className="font-mono text-[11px] uppercase tracking-widest2 text-ink-300">
-                            Service {service.code}
-                          </p> */}
-                          <p className="mt-2 font-display text-xl font-semibold text-ink-900">
+                {service.subServices ? (
+                  <Reveal delay={120} className="mt-10">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      {service.subServices.map((sub) => (
+                        <MediaFrame
+                          key={sub.title}
+                          src={sub.image}
+                          alt={sub.title}
+                          className="group h-64 rounded-2xl shadow-card transition-transform duration-500 ease-signature hover:-translate-y-1 sm:h-72 lg:h-[22rem]"
+                          imgClassName="transition-transform duration-700 ease-signature group-hover:scale-105"
+                          overlay="bottom"
+                          fallback={<CarCarrierIllustration className="h-full w-full" />}
+                        >
+                          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                            <div className="rounded-xl bg-ink-900/5 p-[2px] backdrop-blur-[1.5px]">
+                              <h3 className="font-display text-[15px] font-semibold text-white sm:text-base">
+                                {sub.title}
+                              </h3>
+                              <p className="mt-1 text-[12.5px] leading-relaxed text-white/80">
+                                {sub.description}
+                              </p>
+                            </div>
+                          </div>
+                        </MediaFrame>
+                      ))}
+                    </div>
+                  </Reveal>
+                ) : (
+                  <Reveal delay={120} className={reversed ? "lg:order-1" : ""}>
+                    {service.image ? (
+                      <MediaFrame
+                        src={service.image}
+                        alt={service.title}
+                        className="h-[320px] rounded-[28px] shadow-card sm:h-[380px]"
+                        overlay="bottom"
+                        fallback={
+                          <span className={`flex h-16 w-16 items-center justify-center rounded-2xl border ${palette}`}>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              {service.icon}
+                            </svg>
+                          </span>
+                        }
+                      >
+                        <div className="absolute bottom-0 left-0 p-7 sm:p-8">
+                          <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
                             {service.short}
                           </p>
                         </div>
+                      </MediaFrame>
+                    ) : (
+                      <div className="relative overflow-hidden rounded-[28px] border border-line bg-white p-10 shadow-card sm:p-12">
+                        <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full ${palette.split(" ")[0]} opacity-60`} />
+                        <div className="relative flex h-full flex-col justify-between gap-10">
+                          <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${palette}`}>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              {service.icon}
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="mt-2 font-display text-xl font-semibold text-ink-900">
+                              {service.short}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </Reveal>
+                    )}
+                  </Reveal>
+                )}
               </div>
             );
           })}

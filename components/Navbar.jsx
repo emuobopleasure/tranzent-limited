@@ -63,7 +63,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden lg:block">
-          <PillButton href="/contact" variant="primary">
+          <PillButton href="/quote" variant="primary">
             Request a Quote
           </PillButton>
         </div>
@@ -111,7 +111,7 @@ export default function Navbar() {
             </li>
           ))}
           <li className="mt-8" onClick={() => setOpen(false)}>
-            <PillButton href="/contact" variant="primary" className="w-full justify-center py-3">
+            <PillButton href="/quote" variant="primary" className="w-full justify-center py-3">
               Request a Quote
             </PillButton>
           </li>

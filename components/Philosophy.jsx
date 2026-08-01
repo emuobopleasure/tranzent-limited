@@ -100,10 +100,10 @@ export default function Philosophy() {
               }
             >
               <div className="flex h-full flex-col justify-end p-8 sm:p-10">
-                <p className="max-w-lg font-display text-xl font-medium leading-snug text-white sm:text-2xl">
+                <p className="max-w-lg font-display text-lg font-medium leading-snug text-white sm:text-2xl">
                   "You feel the difference, driven by care, remembered for the experience."
                 </p>
-                <span className="mt-4 block font-mono text-[11px] uppercase tracking-widest2 text-white/70">
+                <span className="mt-4 block font-mono text-[11px] uppercase tracking-widest2 text-white/80">
                   Tranzent Operating Principle
                 </span>
               </div>

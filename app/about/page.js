@@ -53,9 +53,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Who We Are"
-        title="A logistics company built the way a promise should be kept."
-        copy="Tranzent began with a straightforward frustration: logistics that made people anxious instead of confident. We built the opposite and we're scaling it across mobility, vehicle transportation, and technology."
+        eyebrow="About Tranzent"
+        title="Built on trust. Driven by reliability."
+        copy="Tranzent was founded to make vehicle transport and logistics simpler, more reliable, and easier to trust. Today, we help individuals and businesses move vehicles and freight with confidence while building smarter mobility solutions for the future."
       />
 
       {/* <section className="bg-paper py-24 sm:py-28"> */}

@@ -37,22 +37,19 @@ export default function Hero() {
           </span> */}
 
           <h1 className="mt-6 font-display text-[32px] font-semibold leading-[1.08] tracking-tightest text-white drop-shadow-[0_2px_18px_rgba(11,20,36,0.55)] sm:text-[42px] md:text-[50px] lg:text-[58px]">
-            Move vehicles forward, without the guesswork.
+            Reliable vehicle transport starts here.
           </h1>
 
           <p className="mt-6 max-w-md text-[15px] leading-relaxed text-white/85 drop-shadow-[0_1px_10px_rgba(11,20,36,0.5)] sm:text-[16px] md:text-[17px]">
-            Tranzent moves vehicles, fleets, and freight across Nigerian
-            roads with insured precision and live visibility, so every
-            handover feels less like a shipment, and more like a promise
-            kept.
+            Tranzent transports vehicles, fleets, and freight across Nigerian roads with insured precision and live visibility, so every handover feels less like a shipment and more like a promise kept.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-5">
-            <PillButton href="/contact" variant="primary">
+            <PillButton href="/quote" variant="primary">
               Request a Quote
             </PillButton>
-            
-             <a href="/services"
+
+            <a href="/services"
               className="inline-flex items-center gap-2 rounded-full border border-white py-3 px-6 text-[14.5px] font-medium text-white/90 drop-shadow-sm transition-colors btn-ghost-light duration-200 hover:bg-primary-50 hover:text-ink-900"
             >
               Explore Services

@@ -12,7 +12,7 @@ const ACCENTS = {
 
 export default function CoreServices() {
   return (
-    <section className="bg-ink-900 py-24 sm:py-28">
+    <section className="core-services bg-ink-900 py-24 sm:py-28">
       {/* <div className="absolute inset-0 z-0">
         <MediaFrame className="h-full w-full" fallback={<CarCarrierIllustration className="h-full w-full animate-hero-zoom opacity-20"/>} />
       </div> */}
@@ -26,7 +26,7 @@ export default function CoreServices() {
           <Reveal delay={100}>
             <Link
               href="/services"
-              className="group inline-flex items-center gap-2 font-mono text-[12.5px] uppercase tracking-widest2 transition-colors duration-200 text-primary-300 hover:text-primary"
+              className="group inline-flex items-center gap-2 font-mono text-[12.5px] sm:mt-[0.3rem] uppercase tracking-widest2 transition-colors duration-200 text-primary-300 hover:text-primary"
             >
               View all services
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-300 ease-signature group-hover:translate-x-1" aria-hidden="true">
