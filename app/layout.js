@@ -27,7 +27,7 @@ const mono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL("https://tranzent-limited.vercel.app"),
   title: {
-    default: "Tranzent Limited | Beyond Delivery — Vehicle Transportation & Logistics",
+    default: "Tranzent Limited | Beyond Delivery - Vehicle Transportation & Logistics",
     template: "%s | Tranzent Limited",
   },
   description:
@@ -44,7 +44,7 @@ export const metadata = {
   openGraph: {
     title: "Tranzent Limited | Beyond Delivery",
     description:
-      "Professional, secure vehicle delivery across Nigeria — insured, tracked, and on time.",
+      "Professional, secure vehicle delivery across Nigeria - insured, tracked, and on time.",
     url: "https://tranzent-limited.vercel.app",
     siteName: "Tranzent Limited",
     locale: "en_NG",
