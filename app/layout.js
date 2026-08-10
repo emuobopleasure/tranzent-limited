@@ -25,28 +25,64 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://tranzent.co"),
+  metadataBase: new URL("https://tranzent-limited.vercel.app"),
   title: {
-    default: "Tranzent — Beyond Delivery",
-    template: "%s | Tranzent",
+    default: "Tranzent Limited | Beyond Delivery — Vehicle Transportation & Logistics",
+    template: "%s | Tranzent Limited",
   },
   description:
-    "Tranzent is a purpose-driven logistics and vehicle transportation enterprise, moving vehicles and freight with insured precision, real-time transparency, and absolute peace of mind.",
+    "Tranzent Limited is a cargo and freight company specializing in car logistics — professional, secure vehicle delivery across Nigeria. Insured, tracked, and on time.",
   keywords: [
     "Tranzent",
-    "vehicle transportation",
-    "logistics",
-    "car shipping",
-    "fleet logistics",
-    "mobility",
+    "Tranzent Limited",
+    "car logistics Nigeria",
+    "vehicle transportation Nigeria",
+    "car delivery Nigeria",
+    "vehicle haulage",
+    "car recovery towing Nigeria",
   ],
   openGraph: {
-    title: "Tranzent — Beyond Delivery",
+    title: "Tranzent Limited | Beyond Delivery",
     description:
-      "Insured, transparent, on-time vehicle transportation and logistics — engineered for absolute peace of mind.",
-    siteName: "Tranzent",
+      "Professional, secure vehicle delivery across Nigeria — insured, tracked, and on time.",
+    url: "https://tranzent-limited.vercel.app",
+    siteName: "Tranzent Limited",
+    locale: "en_NG",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tranzent Limited | Beyond Delivery",
+    description:
+      "Professional, secure vehicle delivery across Nigeria — insured, tracked, and on time.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Tranzent Limited",
+  alternateName: "Tranzent",
+  url: "https://tranzent-limited.vercel.app",
+  description:
+    "Tranzent Limited is a cargo and freight company specializing in car logistics — professional, secure vehicle delivery across Nigeria.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Plot 809, A-Close, 64 Crescent, Gwarinpa",
+    addressLocality: "Abuja",
+    addressCountry: "NG",
+  },
+  areaServed: "NG",
+  sameAs: [
+    "https://www.linkedin.com/company/tranzent-limited/",
+    "https://x.com/Tranzent_Ltd",
+    "https://www.instagram.com/tranzent_limited/",
+    "https://facebook.com/Tranzent/",
+  ],
 };
 
 export const viewport = {
@@ -54,10 +90,16 @@ export const viewport = {
 };
 
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

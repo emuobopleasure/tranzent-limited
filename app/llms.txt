@@ -1,0 +1,50 @@
+# Tranzent Limited
+
+> Tranzent is a cargo and freight company specializing in car logistics —
+> professional, secure vehicle delivery built to close the trust gap in
+> vehicle transportation. Based in Nigeria, servicing all 36 states + FCT.
+
+Tranzent moves vehicles, fleets, and freight with insured precision and
+live visibility, so every handover feels less like a shipment and more
+like a promise kept. The name fuses "transit" (the discipline of
+movement) with "zen" (the peace of mind that movement shouldn't cost
+you) — reliable transit, delivered with absolute trust.
+
+## Services
+
+- **Driven Vehicle Transport** — a vetted, insured driver delivers the
+  vehicle directly, ideal for fast single-vehicle turnarounds.
+- **Open Vehicle Haulage** — standard open-carrier transport for
+  everyday vehicles.
+- **Enclosed Vehicle Haulage** — fully enclosed, weather-sealed
+  transport for premium, exotic, or high-value vehicles.
+- **Vehicle Recovery & Towing** — emergency and scheduled towing for
+  breakdowns, accidents, or non-running vehicles.
+- **Spare Parts Procurement & Delivery** — sourcing and delivery of
+  vehicle spare parts.
+- **Vehicle Inspection & Document Validation** — pre-purchase and
+  logistics-related vehicle inspection and document checks.
+- **Vehicle Recovery & Automotive Services** — broader automotive
+  recovery and support services.
+
+## Key pages
+
+- Home: /
+- Services: /services
+- About: /about
+- Request a Quote: /quote
+- Contact: /contact
+
+## Company facts
+
+- Legal name: Tranzent Limited
+- Industry: Cargo & freight — car logistics / vehicle transportation
+- Headquarters: Abuja, Nigeria
+- Coverage: 36 states + FCT, Nigeria
+- Founded positioning: "Beyond Delivery" — insured, tracked, on-time
+  vehicle transportation
+
+## Contact
+
+For enquiries or a routed quote, use /quote (vehicle transport requests)
+or /contact (general enquiries).
