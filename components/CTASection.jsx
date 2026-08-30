@@ -54,7 +54,7 @@ export default function CTASection({
               <h2 className="mt-5 font-display text-[30px] font-semibold leading-tight tracking-tightest text-white sm:text-[40px]">
                 {title}
               </h2>
-              <p className="mx-auto mt-5 max-w-lg text-[15.5px] leading-relaxed text-white/55">
+              <p className="mx-auto mt-5 max-w-lg text-[15.5px] leading-relaxed text-white/75">
                 {copy}
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
