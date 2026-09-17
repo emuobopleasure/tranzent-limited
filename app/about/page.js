@@ -43,10 +43,37 @@ const VALUES = [
 ];
 
 const COMMITMENTS = [
-  { label: "Insured, door to door", icon: (<path d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Zm-1.2 13.2L7 11.4l1.4-1.4 2.4 2.4 5.4-5.4 1.4 1.4-6.8 6.8Z" />) },
-  { label: "Condition-verified pickup & delivery", icon: (<path d="M20 6 9 17l-5-5" />) },
-  { label: "Direct line to your driver", icon: (<path d="M6.6 10.8c1.3 2.6 3.4 4.7 6 6l2-2a1 1 0 0 1 1.1-.2 8.6 8.6 0 0 0 3 .5 1 1 0 0 1 1 1V19a1 1 0 0 1-1 1A16 16 0 0 1 3 4a1 1 0 0 1 1-1h2.9a1 1 0 0 1 1 1c0 1 .2 2 .5 3a1 1 0 0 1-.2 1.1l-1.6 1.7Z" />) },
-  { label: "One coordinator, start to finish", icon: (<path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20Zm.75-15h-1.5v6l5.25 3.15.75-1.23-4.5-2.67V7Z" />) },
+  {
+    label: "Insured, door to door",
+    icon: (
+      <path d="M12 3.5 5 6v5.5c0 4.8 3 8.9 7 10 4-1.1 7-5.2 7-10V6l-7-2.5Zm-2.8 8.9 2 2 4.2-4.4" />
+    ),
+  },
+  {
+    label: "Condition-verified pickup & delivery",
+    icon: (
+      <>
+        <path d="M8 4.5h8a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1Z" />
+        <path d="M9.5 4.5V3.8A1.3 1.3 0 0 1 10.8 2.5h2.4a1.3 1.3 0 0 1 1.3 1.3v.7" />
+        <path d="M9.5 12.5l1.8 1.8 3.2-3.6" />
+      </>
+    ),
+  },
+  {
+    label: "Direct line to your driver",
+    icon: (
+      <path d="M7.5 3.5h2.2l1 4-2 1.5a11 11 0 0 0 5.3 5.3l1.5-2 4 1v2.2a1.5 1.5 0 0 1-1.6 1.5A15.5 15.5 0 0 1 6 5.1a1.5 1.5 0 0 1 1.5-1.6Z" />
+    ),
+  },
+  {
+    label: "One coordinator, start to finish",
+    icon: (
+      <>
+        <path d="M6 21V4" />
+        <path d="M6 4.5h11l-2.3 3.3L17 11H6" />
+      </>
+    ),
+  },
 ];
 
 export default function AboutPage() {
@@ -108,7 +135,7 @@ export default function AboutPage() {
                 {COMMITMENTS.map((item) => (
                   <li key={item.label} className="flex items-center gap-4">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         {item.icon}
                       </svg>
                     </span>

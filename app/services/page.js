@@ -4,6 +4,8 @@ import Reveal from "@/components/Reveal";
 import MediaFrame from "@/components/MediaFrame";
 import { SERVICES } from "@/lib/services";
 import CarCarrierIllustration from "@/components/CarCarrierIllustration";
+import Link from "next/link";
+import PillButton from "@/components/PillButton";
 
 export const metadata = {
   title: "Services",
@@ -83,7 +85,7 @@ export default function ServicesPage() {
                           key={sub.title}
                           src={sub.image}
                           alt={sub.title}
-                          className="group h-64 rounded-2xl shadow-card transition-transform duration-500 ease-signature hover:-translate-y-1 sm:h-72 lg:h-[22rem]"
+                          className="group h-64 rounded-2xl shadow-card sm:h-72 lg:h-[22rem]"
                           imgClassName="transition-transform duration-700 ease-signature group-hover:scale-105"
                           overlay="bottom"
                           fallback={<CarCarrierIllustration className="h-full w-full" />}
@@ -97,6 +99,13 @@ export default function ServicesPage() {
                                 {sub.description}
                               </p>
                             </div>
+                            <PillButton
+                              href={`/quote?service=${encodeURIComponent(sub.title)}`}
+                              variant="blur"
+                              size="md"
+                              className="mt-3 backdrop-blur-sm">
+                              Request This Service
+                            </PillButton>
                           </div>
                         </MediaFrame>
                       ))}
@@ -122,6 +131,13 @@ export default function ServicesPage() {
                           <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
                             {service.short}
                           </p>
+                          <PillButton
+                            href={`/quote?service=${encodeURIComponent(service.title)}`}
+                            variant="blur"
+                            size="md"
+                            className="mt-3 ">
+                            Request This Service
+                          </PillButton>
                         </div>
                       </MediaFrame>
                     ) : (

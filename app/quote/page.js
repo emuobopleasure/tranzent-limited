@@ -3,7 +3,7 @@ import ContactForm from "@/components/QuoteForm";
 import Reveal from "@/components/Reveal";
 import MediaFrame from "@/components/MediaFrame";
 import QuoteIllustration from "@/components/QuoteIllustration";
-import QuoteForm from "@/components/QuoteForm";
+import { Suspense } from "react";
 
 export const metadata = {
     title: "Get a Quote",
@@ -48,7 +48,9 @@ export default function QuotePage() {
             <section className="bg-paper py-24 sm:py-28">
                 <div className="container-brand mx-auto max-w-2xl">
                     <Reveal>
-                        <QuoteForm />
+                        <Suspense fallback={<div className="h-[600px] animate-pulse rounded-3xl border border-line bg-white shadow-card" />}>
+                            <ContactForm />
+                        </Suspense>
                     </Reveal>
                 </div>
             </section>

@@ -9,6 +9,7 @@ import {
   estimateRoadDistanceKm,
   estimateDurationLabel,
 } from "@/lib/nigeria-locations";
+import { useSearchParams } from "next/navigation";
 
 const VEHICLE_TYPES = [
   "Sedan / Saloon Car",
@@ -91,6 +92,9 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
   const [lastSubmissionWasDelivery, setLastSubmissionWasDelivery] = useState(false);
+
+  const searchParams = useSearchParams();
+  const [justPreselected, setJustPreselected] = useState(false);
 
   const fieldRefs = useRef({});
   function registerRef(name) {
@@ -192,6 +196,30 @@ export default function ContactForm() {
     setErrors({});
   }
 
+
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const preselected = searchParams.get("service");
+    if (!preselected || !SERVICE_OPTIONS.includes(preselected)) return;
+
+    updateService(preselected);
+
+    const scrollTimer = window.setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 350);
+
+    const highlightOnTimer = window.setTimeout(() => setJustPreselected(true), 900);
+    const highlightOffTimer = window.setTimeout(() => setJustPreselected(false), 900 + 3200);
+
+    return () => {
+      window.clearTimeout(scrollTimer);
+      window.clearTimeout(highlightOnTimer);
+      window.clearTimeout(highlightOffTimer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   function validate() {
     const next = {};
     if (!values.name.trim()) next.name = "Please tell us your full name.";
@@ -261,7 +289,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} noValidate className="rounded-3xl border border-line bg-white p-7 shadow-card sm:p-10">
+      <form ref={formRef} onSubmit={handleSubmit} noValidate className="rounded-3xl border border-line bg-white p-7 shadow-card sm:p-10">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div>
             <label htmlFor="name" className="field-label">Full Name</label>
@@ -311,7 +339,8 @@ export default function ContactForm() {
             {errors.email && <p className="mt-2 text-[13px] text-accent-600">{errors.email}</p>}
           </div>
 
-          <div className="sm:col-span-2">
+          {/* <div className={`sm:col-span-2 rounded-2xl transition-all duration-500 ease-signature ${justPreselected ? "ring-2 ring-primary-300 ring-offset-2" : ""}`}> */}
+          <div className="sm:col-span-2 rounded-2xl">
             <label htmlFor="serviceType" className="field-label">Service Requested</label>
             <div className="relative">
               <select
@@ -320,7 +349,8 @@ export default function ContactForm() {
                 value={values.serviceType}
                 onChange={(e) => updateService(e.target.value)}
                 aria-invalid={Boolean(errors.serviceType)}
-                className="field-input appearance-none pr-11"
+                // className="field-input appearance-none pr-11"
+                className={`field-input appearance-none pr-11 sm:col-span-2 rounded-2xl transition-all duration-500 ease-signature ${justPreselected ? "ring-2 ring-primary-300 ring-offset-2" : ""}`}
               >
                 <option value="" disabled>Select a service</option>
                 {SERVICE_OPTIONS.map((opt) => (
