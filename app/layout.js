@@ -25,7 +25,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://tranzent-limited.vercel.app"),
+  metadataBase: new URL("https://tranzentlimited.com"),
   title: {
     default: "Tranzent Limited | Beyond Delivery - Vehicle Transportation & Logistics",
     template: "%s | Tranzent Limited",
@@ -45,7 +45,7 @@ export const metadata = {
     title: "Tranzent Limited | Beyond Delivery",
     description:
       "Professional, secure vehicle delivery across Nigeria - insured, tracked, and on time.",
-    url: "https://tranzent-limited.vercel.app",
+    url: "https://tranzentlimited.com",
     siteName: "Tranzent Limited",
     locale: "en_NG",
     type: "website",
@@ -67,7 +67,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Tranzent Limited",
   alternateName: "Tranzent",
-  url: "https://tranzent-limited.vercel.app",
+  url: "https://tranzentlimited.com",
   description:
     "Tranzent Limited is a cargo and freight company specializing in car logistics — professional, secure vehicle delivery across Nigeria.",
   address: {

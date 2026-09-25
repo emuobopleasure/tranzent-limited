@@ -1,4 +1,4 @@
-const BASE_URL = "https://tranzent-limited.vercel.app";
+const BASE_URL = "https://tranzentlimited.com"
 
 export default function sitemap() {
   const routes = [
