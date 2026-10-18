@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 import Modal from "./Modal";
 import MediaFrame from "./MediaFrame";
 import InstagramEmbed from "./InstagramEmbed";
-import { TESTIMONIALS } from "@/lib/testimonials";
+import { TESTIMONIALS, SHOW_WRITTEN_TESTIMONIALS } from "@/lib/testimonials";
 import Link from "next/link";
 
 const FILTERS = [
@@ -13,6 +13,10 @@ const FILTERS = [
     { key: "written", label: "Written" },
     { key: "video", label: "Video" },
 ];
+
+function itemMeta(item) {
+    return [item.destination, item.vehicle].filter(Boolean).join(" · ");
+}
 
 function StarRow() {
     return (
@@ -61,7 +65,18 @@ function preloadInstagramScript() {
 }
 
 export default function TestimonialsSection({ showHeading = true, limit }) {
-    const base = limit ? TESTIMONIALS.slice(0, limit) : TESTIMONIALS;
+    // Hide written reviews while on hold, before applying `limit`
+    const available = TESTIMONIALS.filter(
+        (t) => SHOW_WRITTEN_TESTIMONIALS || t.type !== "written"
+    );
+    const base = limit ? available.slice(0, limit) : available;
+
+    // Only offer filter buttons for categories that actually have items
+    const filters = FILTERS.filter(
+        (f) => f.key === "all" || available.some((t) => t.type === f.key)
+    );
+    const showFilters = filters.length > 2; // "All" + one category would be redundant
+
     const [filter, setFilter] = useState("all");
     const [activeVideo, setActiveVideo] = useState(null);
 
@@ -73,10 +88,6 @@ export default function TestimonialsSection({ showHeading = true, limit }) {
                 <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
                     {showHeading && (
                         <Reveal>
-                            <span className="eyebrow text-ink-500">
-                                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                                What Customers Say
-                            </span>
                             <h2 className="mt-5 max-w-xl font-display text-[32px] font-semibold leading-tight tracking-tightest sm:text-[40px]">
                                 Real hauls, real feedback.
                             </h2>
@@ -97,23 +108,25 @@ export default function TestimonialsSection({ showHeading = true, limit }) {
                     )}
                 </div>
 
-                <Reveal delay={80}>
-                    <div className="mt-8 flex gap-2">
-                        {FILTERS.map((f) => (
-                            <button
-                                key={f.key}
-                                type="button"
-                                onClick={() => setFilter(f.key)}
-                                className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-all duration-300 ease-signature active:scale-90 ${filter === f.key
-                                    ? "border-ink-900 bg-ink-900 text-white"
-                                    : "border-line bg-white text-ink-600 hover:border-ink-300"
-                                    }`}
-                            >
-                                {f.label}
-                            </button>
-                        ))}
-                    </div>
-                </Reveal>
+                {showFilters && (
+                    <Reveal delay={80}>
+                        <div className="mt-8 flex gap-2">
+                            {filters.map((f) => (
+                                <button
+                                    key={f.key}
+                                    type="button"
+                                    onClick={() => setFilter(f.key)}
+                                    className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-all duration-300 ease-signature active:scale-90 ${filter === f.key
+                                        ? "border-ink-900 bg-ink-900 text-white"
+                                        : "border-line bg-white text-ink-600 hover:border-ink-300"
+                                        }`}
+                                >
+                                    {f.label}
+                                </button>
+                            ))}
+                        </div>
+                    </Reveal>
+                )}
 
                 <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {visible.map((item, i) => (
@@ -130,8 +143,7 @@ export default function TestimonialsSection({ showHeading = true, limit }) {
                                         {item.quote}
                                     </p>
                                     <div className="mt-6 border-t border-line pt-4">
-                                        <p className="font-display text-[15px] font-semibold text-ink-900">{item.name}</p>
-                                        <p className="mt-0.5 text-[13px] text-ink-400">{item.role}</p>
+                                        {itemMeta(item) && <p className="mt-0.5 text-[13px] text-ink-400">{itemMeta(item)}</p>}                                        <p className="mt-0.5 text-[13px] text-ink-400">{item.role}</p>
                                         <div className="mt-2 flex items-center justify-between">
                                             <StarRow />
                                             {item.sourceUrl && <SourceLink href={item.sourceUrl}>View source</SourceLink>}

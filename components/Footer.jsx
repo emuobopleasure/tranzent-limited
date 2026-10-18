@@ -42,10 +42,10 @@ const COLUMNS = [
   {
     title: "Services",
     links: [
-      { label: "Vehicle Transportation", href: "/services#transportation" },
-      { label: "Enclosed & High-Value Haul", href: "/services#enclosed" },
-      { label: "Fleet & Dealer Logistics", href: "/services#fleet" },
-      { label: "Mobility Consulting", href: "/services#consulting" },
+      { label: "Vehicle Delivery", href: "/services#transportation" },
+      { label: "Spare Parts Procurement", href: "/services#spare-parts" },
+      { label: "Vehicle Inspection", href: "/services#inspection" },
+      { label: "Vehicle Recovery", href: "/services#recovery" },
     ],
   },
   {

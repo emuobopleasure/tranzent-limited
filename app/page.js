@@ -3,8 +3,9 @@ import CredibilitySection from "@/components/CredibilitySection";
 import TrustMatrix from "@/components/TrustMatrix";
 import CoreServices from "@/components/CoreServices";
 import ServiceShowcase from "@/components/ServiceShowcase";
-import Philosophy from "@/components/Philosophy";
 import CTASection from "@/components/CTASection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import OperatingPrinciple from "@/components/OperatingPrinciple";
 
 export const metadata = {
   title: "Tranzent Limited - Beyond Delivery",
@@ -19,8 +20,9 @@ export default function HomePage() {
       <CredibilitySection />
       <TrustMatrix />
       <CoreServices />
-      {/* <ServiceShowcase /> */}
-      {/* <Philosophy /> */}
+      <ServiceShowcase />
+      <OperatingPrinciple/>
+      <TestimonialsSection limit={6} />
       <CTASection />
     </>
   );

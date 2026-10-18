@@ -14,7 +14,7 @@ export default function TestimonialsPage() {
             <PageHero
                 eyebrow="Testimonials"
                 title="What our customers are saying."
-                copy="Written and video reviews from people who've actually moved a vehicle with Tranzent — nothing staged, every one linked back to where it came from."
+                copy="Written and video reviews from people who've actually moved a vehicle with Tranzent, nothing staged, every one linked back to where it came from."
             />
             <TestimonialsSection showHeading={false} />
             <CTASection

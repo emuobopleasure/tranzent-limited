@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { haptics } from "../lib/haptics";
 import Modal from "./Modal";
 import { ErrorModalContent, SuccessModalContent } from "./ModalStatus";
 
@@ -30,7 +31,10 @@ export default function EnquiryForm() {
         e.preventDefault();
         const next = validate();
         setErrors(next);
-        if (Object.keys(next).length > 0) return;
+        if (Object.keys(next).length > 0) {
+            haptics.error(); // invalid fields: double buzz as the messages appear
+            return;
+        }
 
         setStatus("submitting");
         fetch("/api/submit-form", {
@@ -45,9 +49,11 @@ export default function EnquiryForm() {
             .then(() => {
                 setStatus("success");
                 setValues(initialState);
+                haptics.success(); // sent: one short buzz
             })
             .catch(() => {
                 setStatus("error");
+                haptics.error(); // server or network failure: double buzz
             });
     }
 

@@ -61,11 +61,16 @@ export default function CTASection({
                 <PillButton href="/quote" variant="primary">
                   Request a Quote
                 </PillButton>
-                <Link href="/services" className="btn-ghost-light hover:text-ink-900 hover:bg-primary-50 py-3">
+                <Link
+                  href="/services"
+                  className="btn-ghost-light group gap-4 py-1.5 pl-6 pr-1.5 hover:bg-primary-50 hover:text-ink-900 active:bg-primary-50 active:text-ink-900"
+                >
                   See Our Services
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                    <path d="M2 12 12 2M12 2H4M12 2v8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full ring-1 ring-inset ring-white/50 transition-all duration-300 ease-signature group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:ring-ink-900/50 group-active:ring-ink-900/50">
+                    <svg viewBox="0 0 14 14" fill="none" aria-hidden="true" className="h-3.5 w-3.5">
+                      <path d="M2 12 12 2M12 2H4M12 2v8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
                 </Link>
               </div>
             </div>

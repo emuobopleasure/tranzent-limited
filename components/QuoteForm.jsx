@@ -10,6 +10,7 @@ import {
   estimateDurationLabel,
 } from "@/lib/nigeria-locations";
 import { useSearchParams } from "next/navigation";
+import { haptics } from "@/lib/haptics";
 
 const VEHICLE_TYPES = [
   "Sedan / Saloon Car",
@@ -87,7 +88,7 @@ function formatMinutes(totalMinutes) {
   return `~${h}h ${m}m`;
 }
 
-export default function ContactForm() {
+export default function QuoteForm() {
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
@@ -256,6 +257,7 @@ export default function ContactForm() {
     const next = validate();
     setErrors(next);
     if (Object.keys(next).length > 0) {
+      haptics.error(); // invalid fields: double buzz as the messages appear
       scrollToFirstError(next);
       return;
     }
@@ -277,12 +279,13 @@ export default function ContactForm() {
         setLastSubmissionWasDelivery(wasDelivery);
         setStatus("success");
         setValues(initialState);
+        haptics.success(); // sent: one short buzz
       })
       .catch(() => {
         setStatus("error");
+        haptics.error(); // server or network failure: double buzz
       });
   }
-
   function closeModal() {
     setStatus("idle");
   }

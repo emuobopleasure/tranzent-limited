@@ -165,38 +165,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-ink-900 py-24 sm:py-28">
-        <div className="container-brand">
-          <Reveal>
-            {/* <span className="eyebrow text-primary-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              How It Works
-            </span> */}
-            <h2 className="mt-5 max-w-xl font-display text-[30px] font-semibold leading-tight tracking-tightest text-white sm:text-[38px]">
-              From inquiry to handover, in five checkpoints.
-            </h2>
-          </Reveal>
-
-          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-5">
-            {PROCESS.map((item, i) => (
-              <Reveal key={item.step} delay={i * 90} className="h-full">
-                <div className="flex h-full flex-col justify-between bg-ink-900 p-6 sm:p-7">
-                  <span className="font-mono text-[11px] text-white/30">0{i + 1}</span>
-                  <div>
-                    <h3 className="mt-8 font-display text-base font-semibold text-white sm:text-lg">
-                      {item.step}
-                    </h3>
-                    <p className="mt-2.5 text-[13.5px] leading-relaxed text-white/50">
-                      {item.copy}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CTASection
         eyebrow="Have something specific in mind?"
         title="Tell us the route, we'll handle the rest."
