@@ -3,7 +3,7 @@ import MediaFrame from "./MediaFrame";
 
 export default function OperatingPrinciple() {
   return (
-    <section className="bg-paper py-24 sm:py-28">
+    <section className="bg-paper">
       <div className="container-brand">
         <Reveal>
           <MediaFrame

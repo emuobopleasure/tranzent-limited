@@ -597,7 +597,11 @@ export default function QuoteForm() {
         </p>
       </form>
 
-      <Modal open={status === "success"} onClose={closeModal}>
+      <Modal
+        open={status === "success"}
+        onClose={closeModal}
+        label={lastSubmissionWasDelivery ? "Quote request received" : "Enquiry received"}
+      >
         <SuccessModalContent
           title={lastSubmissionWasDelivery ? "Quote request received." : "Enquiry received."}
           message={`A member of the Tranzent team will reach out within one business day${lastSubmissionWasDelivery ? " with a routed quote." : "."}`}
@@ -605,7 +609,7 @@ export default function QuoteForm() {
         />
       </Modal>
 
-      <Modal open={status === "error"} onClose={closeModal}>
+      <Modal open={status === "error"} onClose={closeModal} label="Request could not be sent">
         <ErrorModalContent
           message="We couldn't send your request. Please check your connection and try again, or reach us directly at hello@tranzent.co."
           onClose={closeModal}

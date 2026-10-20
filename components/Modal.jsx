@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function Modal({ open, onClose, children }) {
+export default function Modal({ open, onClose, children, label }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -27,6 +27,7 @@ export default function Modal({ open, onClose, children }) {
   return createPortal(
     <div
       role="dialog"
+      aria-label={label}
       aria-modal="true"
       className={`fixed inset-0 z-[999] flex items-center justify-center p-4 transition-opacity duration-300 ease-signature sm:p-6 ${
         open ? "opacity-100" : "pointer-events-none opacity-0"

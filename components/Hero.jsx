@@ -38,7 +38,7 @@ export default function Hero() {
 
             {/* hidden on short phones so it never reaches the truck */}
             <p className="mx-auto mt-5 max-w-md text-[15px] leading-relaxed text-white drop-shadow-[0_1px_10px_rgba(11,20,36,0.55)] sm:mx-0 sm:text-[16px] md:max-w-lg md:text-[17px] max-[430px]:[@media(max-height:720px)]:hidden">
-              Tranzent transports vehicles, fleets, and freight across Nigerian roads with insured precision and live visibility, so every handover feels less like a shipment and more like a promise kept.
+              Tranzent Limited transports vehicles, fleets, and freight across Nigerian roads with insured precision and live visibility, so every handover feels less like a shipment and more like a promise kept.
             </p>
           </div>
 

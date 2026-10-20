@@ -71,14 +71,6 @@ function ItemMeta({ item }) {
 
 /* ---------- card ---------- */
 
-/**
- * One review card. Renders the written or video layout based on `item.type`.
- *
- * Props:
- *  - item:    an entry from lib/testimonials.js
- *  - onPlay:  (item) => void, called when a video card is clicked
- *  - onWarm:  () => void, optional; called on hover to preload the embed script
- */
 export default function TestimonialCard({ item, onPlay, onWarm }) {
     if (item.type === "written") {
         return (

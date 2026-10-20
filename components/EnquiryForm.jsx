@@ -145,7 +145,7 @@ export default function EnquiryForm() {
                 </p>
             </form>
 
-            <Modal open={status === "success"} onClose={closeModal}>
+            <Modal open={status === "success"} onClose={closeModal} label="Enquiry received">
                 <SuccessModalContent
                     title="Enquiry received."
                     message="A member of the Tranzent team will reach out within one business day."
@@ -153,7 +153,7 @@ export default function EnquiryForm() {
                 />
             </Modal>
 
-            <Modal open={status === "error"} onClose={closeModal}>
+            <Modal open={status === "error"} onClose={closeModal} label="Enquiry could not be sent">
                 <ErrorModalContent
                     message="We couldn't send your enquiry. Please check your connection and try again, or reach us directly at hello@tranzent.co."
                     onClose={closeModal}

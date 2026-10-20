@@ -104,8 +104,8 @@ export default function TestimonialsSection({ showHeading = true, limit }) {
                                     type="button"
                                     onClick={() => setFilter(f.key)}
                                     className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-all duration-300 ease-signature active:scale-90 ${filter === f.key
-                                            ? "border-ink-900 bg-ink-900 text-white"
-                                            : "border-line bg-white text-ink-600 hover:border-ink-300"
+                                        ? "border-ink-900 bg-ink-900 text-white"
+                                        : "border-line bg-white text-ink-600 hover:border-ink-300"
                                         }`}
                                 >
                                     {f.label}
@@ -128,7 +128,11 @@ export default function TestimonialsSection({ showHeading = true, limit }) {
                 </div>
             </div>
 
-            <Modal open={Boolean(activeVideo)} onClose={() => setActiveVideo(null)}>
+            <Modal
+                open={Boolean(activeVideo)}
+                onClose={() => setActiveVideo(null)}
+                label={activeVideo ? `Video review by ${activeVideo.name}` : "Video review"}
+            >
                 {activeVideo && (
                     <div key={activeVideo.id} className="animate-pop-in">
                         <div className="sticky top-0 z-20 flex items-center justify-between bg-gradient-to-b from-white via-white/95 to-transparent px-3 pb-3 pt-3 sm:px-4 sm:pt-4">
