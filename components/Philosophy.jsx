@@ -1,5 +1,4 @@
 import Reveal from "./Reveal";
-import MediaFrame from "./MediaFrame";
 
 const PILLARS = [
   {

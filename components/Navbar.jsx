@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import PillButton from "./PillButton";
-import Image from "next/image";
 
 const LINKS = [
   { label: "Home", href: "/" },
@@ -33,8 +32,10 @@ export default function Navbar() {
     };
   }, [open]);
 
-  // Solid, dependable surfaces only — no opacity/blur stacking that can
-  // silently fail to render on some browsers and leave nav text unreadable.
+  // keeping the nav surfaces solid on purpose. stacking opacity and blur looks
+  // nice but on some browsers it doesn't render, and the nav links end up
+  // unreadable. so no transparency here
+
   const solid = scrolled || open;
   const barBg = solid ? "bg-white shadow-[0_1px_0_0_rgba(11,20,36,0.08)]" : "bg-transparent";
   const logoVariant = solid ? "dark" : "light";

@@ -4,7 +4,6 @@ import Reveal from "@/components/Reveal";
 import MediaFrame from "@/components/MediaFrame";
 import { SERVICES } from "@/lib/services";
 import CarCarrierIllustration from "@/components/CarCarrierIllustration";
-import Link from "next/link";
 import PillButton from "@/components/PillButton";
 
 export const metadata = {

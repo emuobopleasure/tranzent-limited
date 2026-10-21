@@ -72,9 +72,10 @@ function Pin({ x, y, color, pulse, label, size = 7 }) {
     );
 }
 
-// liveGeometry: optional array of [lng, lat] pairs from a real routing API
-// (e.g. OpenRouteService). When present, this draws the actual road-hugging
-// route instead of the built-in state-adjacency approximation.
+// liveGeometry: optional [lng, lat] pairs from the routing API (ORS). if it's
+// passed in, the map draws the real road route. if not, it uses the built-in
+// state-to-state approximation
+
 export default function NigeriaMap({ origin, destination, liveGeometry, isLoadingRoute, className = "" }) {
     const sameState = Boolean(origin && destination && origin === destination);
     const routeNames = !sameState ? findRoute(origin, destination) : null;

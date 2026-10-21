@@ -3,11 +3,18 @@ import { NIGERIA_STATES } from "@/lib/nigeria-locations";
 
 const ORS_URL = "https://api.openrouteservice.org/v2/directions/driving-car/geojson";
 
-// Requires ORS_API_KEY in your environment (.env.local) — get a free key at
-// https://openrouteservice.org/dev/#/signup (no card required). Until a key
-// is set, this route returns { error: "missing_key" } and the client falls
-// back to the built-in state-adjacency estimate automatically — nothing
-// breaks either way.
+// Live road distance and duration between two Nigerian states, via OpenRouteService (ORS).
+//
+// Setup: this route needs ORS_API_KEY. It's set to Tranzent's own ORS account key in
+// .env.local for local dev and in the Vercel environment variables for deployed builds.
+// If the key ever needs replacing, create a new one at
+// https://openrouteservice.org/dev/#/signup (free, no card needed) and update both places.
+//
+// Fallback: I built this so the quote form works with or without the key. If the key is
+// missing, or ORS fails or times out, the route returns an error and the client falls back
+// to the built-in state-adjacency estimate. Nothing breaks either way, the quote just uses
+// the estimated distance instead of the live one.
+
 export async function POST(request) {
   const apiKey = process.env.ORS_API_KEY;
   if (!apiKey) {
@@ -29,10 +36,15 @@ export async function POST(request) {
     return NextResponse.json({ error: "invalid_states" }, { status: 400 });
   }
 
-  // Note: this routes between each state's reference coordinate (its
-  // capital/major city), same as the built-in estimate — not the specific
-  // street address entered in the form. True address-to-address routing
-  // would need a geocoding step first.
+  // Note: the distance is calculated between each state's reference point (its capital or
+// major city), the same points the built-in estimate uses. It does not use the street
+// address entered in the form, so it's an approximate figure for the quote, not an exact
+// door-to-door distance.
+//
+// For true address-to-address routing, the addresses would first need to be geocoded to
+// coordinates (for example with the ORS geocoding endpoint) before calling the directions
+// API.
+
   try {
     const res = await fetch(ORS_URL, {
       method: "POST",

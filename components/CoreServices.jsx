@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 import { SERVICES } from "@/lib/services";
-import MediaFrame from "./MediaFrame";
-import CarCarrierIllustration from "./CarCarrierIllustration";
+
 
 const ICONS = {
   transportation: (

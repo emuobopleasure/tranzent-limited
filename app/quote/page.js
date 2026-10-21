@@ -32,7 +32,7 @@ export default function QuotePage() {
                     />
                 </div>
 
-                {/* legibility scrim — same approach as your homepage hero */}
+                {/* legibility scrim — same approach as homepage hero */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-900/90 via-ink-900/45 to-ink-900/10" />
 
                 <div className="container-brand relative pb-10 sm:pb-12">

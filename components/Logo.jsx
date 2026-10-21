@@ -1,8 +1,8 @@
 const RING_COLORS = {
-  gray: "text-[#4c4c4c]",   // original brand gray — safest default on light backgrounds
+  gray: "text-[#4c4c4c]",   // Default variant: the original brand gray wordmark. Use it on light backgrounds, where it has the best contrast.
   charcoal: "text-charcoal",
   ink: "text-ink-900",
-  white: "text-white",      // use this on dark backgrounds (navy hero, footer)
+  white: "text-white",      // Light: for dark backgrounds, such as the navy hero and the footer
   primary: "text-primary",
   secondary: "text-secondary",
   accent: "text-accent",

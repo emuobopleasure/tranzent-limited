@@ -33,9 +33,10 @@ const SERVICE_OPTIONS = [
   "General Inquiry",
 ];
 
-// Only these actually move a vehicle from A to B — everything else (spare
-// parts, inspections, general questions) doesn't need vehicle/location/map
-// fields cluttering the form.
+// only these services move a vehicle from A to B, so only these need the
+// vehicle, location and map fields. the rest (spare parts, inspection,
+// general questions) don't
+
 const DELIVERY_SERVICES = [
   "Driven Vehicle Transport",
   "Open Vehicle Haulage",
@@ -43,8 +44,10 @@ const DELIVERY_SERVICES = [
   "Vehicle Recovery & Towing",
 ];
 
-// Matches the order fields are validated in, so "scroll to first error"
-// always jumps to whichever one the reader would encounter first visually.
+// FIELD_ORDER matches the order the fields appear on the form. when validation
+// fails, scrollToFirstError uses it to jump to the topmost error, not
+// whichever one happened to be checked first
+
 const FIELD_ORDER = [
   "name",
   "email",
@@ -118,9 +121,10 @@ export default function QuoteForm() {
     [distanceKm]
   );
 
-  // Optional live routing (OpenRouteService) — see app/api/route-distance.
-  // If no API key is configured, or the request fails for any reason, this
-  // silently falls back to the estimate above. Nothing breaks either way.
+  // optional live routing through OpenRouteService (see app/api/route-distance).
+  // if the key isn't set or the request fails for any reason, I just fall back
+  // to the estimate above, so the quote form keeps working either way
+
   const [liveRoute, setLiveRoute] = useState(null);
   const [liveStatus, setLiveStatus] = useState("idle"); // idle | loading | done
 

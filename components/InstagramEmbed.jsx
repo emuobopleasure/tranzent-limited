@@ -72,10 +72,11 @@ export default function InstagramEmbed({ url }) {
       document.body.appendChild(script);
     }
 
-    // Safety net: if nothing has rendered within 9s (slow or no connection,
-    // Instagram unreachable), stop spinning and show a direct link instead
-    // of leaving the visitor staring at a spinner indefinitely.
-    
+    // Timeout fallback: if the embed hasn't rendered after 9s (slow connection, or Instagram
+    // blocked or unreachable), stop the loading spinner and show a direct link to the post
+    // instead. Without this, the modal would spin forever and the visitor would have no way
+    // to reach the video.
+
     const timeout = window.setTimeout(() => {
       setStatus((s) => (s === "ready" ? s : "error"));
     }, 9000);
@@ -95,9 +96,8 @@ export default function InstagramEmbed({ url }) {
       )}
       <div
         ref={containerRef}
-        className={`transition-opacity duration-500 ease-signature ${
-          status === "ready" ? "opacity-100" : "opacity-0"
-        }`}
+        className={`transition-opacity duration-500 ease-signature ${status === "ready" ? "opacity-100" : "opacity-0"
+          }`}
       />
     </div>
   );
